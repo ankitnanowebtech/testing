@@ -1,0 +1,169 @@
+﻿		<div class="col-md-8 col-md-offset-2 center-top" ng-cloak>
+		
+		<div class="top-black">
+			
+				<h1>Login</h1>
+
+				
+		</div>
+		
+		
+		<div class="enpast">
+		
+		<div class="col-md-6 pad-1 pad-2">
+		
+		<div class="left-enpast">
+		
+		<div class="logo">
+		
+		<img src="assets/images/logo.png" alt="logo" border="0">
+		
+		</div>
+		
+		<div class="logo-head">		
+			<h3>Login to ENPAST to access your Secure Credential Pool</h3>		
+		</div>
+		
+		
+		<div class="auto-login">
+		
+		<!-- <h3>Auto-login options</h3> -->
+		
+		<div class="out-order">
+		
+		<div class="form right-tab">
+               
+               <!--  <label class="radio">
+                    <input value="1" type="radio">Do not save
+                </label>
+                <label class="radio">
+                    <input value="2" type="radio">Save username
+                </label>
+                <label class="radio">
+                    <input value="3" type="radio">Save username and password
+                </label>
+                <label class="radio">
+                    <input value="4" type="radio">save and encrypt login data with a key:
+                </label> -->
+         </div>		
+		
+		<div class="clear"></div>
+		</div>
+		
+		
+		<div class="clear"></div>
+		</div>
+		
+		
+		
+		</div>
+		
+		
+		
+		
+		</div>
+		
+		
+		
+		
+		<div class="col-md-6 ab-white">
+		
+	 <form name="form" ng-submit="vm.login()" role="form">		
+		
+
+		<div class="right-enpast">
+		<span class="pad-6">
+		<div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message"></div>
+        </span>
+		
+		<md-input-container class="md-block">
+		<div class="enter-cont-2">
+		<div class="form-group" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }" >
+				
+				 <input type="text" name="username" id="username" class="form-control" placeholder="Enter your Email"  ng-model="vm.username" required />
+           	 <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">Username is required</span>
+		</div>
+		</div>
+		
+		</md-input-container>
+        <md-input-container class="md-block">
+			<div class="enter-cont-2">	
+				<div class="form-group"  ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">				
+					<div class="col-md-11 col-sm-11 col-xs-11 pad-1">
+						<input type="password" name="password" id="password" class="form-control" placeholder="Enter your Password" ng-model="vm.password" required>
+						<span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password is required</span>
+					</div>
+					<!-- <div class="pull-right"><img src="assets/images/hide-icon.png" border="0" ></div>				 -->
+				</div>
+				<div class="clear"></div>
+			</div>
+		 </md-input-container>
+               <md-input-container class="md-block">
+					<div class="enter-cont-2">
+					<div class="form-group">
+
+					<div class="col-md-2 pad-1">
+
+					Iterations:
+
+					</div> 
+
+					<div class="col-md-10 pad-2">
+
+					<input class="form-control" id="usr" type="number" ng-model="vm.iterations" aria-label="" required>
+					<span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Iterations is required</span>
+					</div>
+
+					</div>
+
+					<div class="clear"></div>		
+					</div>
+		 		</md-input-container>
+
+		 <span style="text-align: center;">  
+		 
+		 <md-progress-linear ng-if="vm.dataLoading" md-mode="indeterminate"></md-progress-circular>
+
+		<!--  <img ng-if="vm.dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />  -->
+
+		 </span>
+		<!-- <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-primary btn-block pad-3" data-ripple>Sign In</button> -->
+        
+              <md-button class="md-raised md-primary" type="submit" ng-disabled="form.$invalid || vm.dataLoading" >Sign In</md-button>
+
+            <!-- <a href="#!/register" class="btn btn-link">Register</a> -->
+            <md-button ng-href="#!/register" class="btn btn-link" >Register</md-button>
+
+			<div class="clear"></div>
+		
+		</div>		
+	</form>
+		
+	</div>			
+	</div>
+		
+		
+		
+		<div class="clear"></div>
+		</div>
+		
+		
+		
+		
+		
+		</div>
+	
+	
+	
+	
+	
+	<div class="clear"></div>
+
+	<script>
+	
+    // just add effect to elements
+    Array.prototype.forEach.call(document.querySelectorAll('[data-ripple]'), function(element){
+        // find all elements and attach effect
+        new RippleEffect(element); // element is instance of javascript element node
+    });
+</script>

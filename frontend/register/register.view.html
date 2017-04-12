@@ -1,0 +1,129 @@
+﻿		<div class="col-md-6 col-md-offset-3 center-top">
+		
+		<div class="top-black">
+            <a href="#!/login">
+			 <i class="fa fa-times white pull-right" aria-hidden="true"></i>
+            </a>
+		<h1> Register</h1>
+		</div>
+	
+     <form name="form" ng-submit="vm.register()" role="form">	
+		
+		<div class="enpast">		
+		<div class="col-md-12 ab-white">		
+        <div class="right-enpast">
+        
+        <span class="pad-6">
+		<div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message"></div>
+        </span>
+		
+
+        <md-input-container class="md-block">
+		<div class="enter-cont-4">
+		<div class="form-group"  ng-class="{ 'has-error': form.firstname.$dirty && form.firstname.$error.required }">
+		    <!-- <label for="username">First name</label> -->
+            <input type="text" name="firstname" id="firstname" class="form-control" placeholder="First Name" ng-model="vm.user.firstname" required />
+            <span ng-show="form.firstname.$dirty && form.firstname.$error.required" class="help-block">First name is required</span>
+		</div>
+		</div>
+			</md-input-container>
+        <md-input-container class="md-block">
+		<div class="enter-cont-5">
+            <div class="form-group" ng-class="{ 'has-error': form.lastname.$dirty && form.lastname.$error.required }">
+            <!-- <label for="username">Last name</label> -->
+            <input type="text" name="lastname" id="lastname" class="form-control" placeholder="Last Name" ng-model="vm.user.lastname" required />
+            <span ng-show="form.lastname.$dirty && form.lastname.$error.required" class="help-block">Last name is required</span>
+            </div> 
+		</div>
+			</md-input-container>
+        <md-input-container class="md-block">
+		<div class="enter-cont-5">
+		 <div class="form-group" ng-class="{ 'has-error': form.email.$dirty && form.email.$error.required }">
+            <!-- <label for="username">Email</label> -->
+            <input type="email" name="email" id="email" class="form-control" placeholder="Email" ng-model="vm.user.email" required />
+            <span ng-show="form.email.$dirty && form.email.$error.required" class="help-block">Email name is required</span>
+        </div>
+		</div>
+			</md-input-container>
+        <md-input-container class="md-block">
+		<div class="enter-cont-5">
+            <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
+            <!-- <label for="password">Password</label> -->
+            <input type="password" name="password" id="password" class="form-control" placeholder="Password" ng-model="vm.user.password" required />
+            <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password is required</span>
+        </div>
+		</div>
+			</md-input-container>
+        <md-input-container class="md-block">
+		<div class="enter-cont-5">
+            <div class="form-group" ng-class="{ 'has-error': form.cpassword.$dirty && form.cpassword.$error.required }">
+                <!-- <label for="password">Confirm Password</label> -->
+                <input type="password" name="cpassword" id="cpassword" class="form-control" placeholder="Confirm Password" ng-model="vm.user.cpassword" required />
+                <span ng-show="form.cpassword.$dirty && form.cpassword.$error.required" class="help-block">Password is required</span>
+            </div>
+		</div>
+	</md-input-container>
+		<md-input-container class="md-block">
+	        <div class="enter-cont-5">
+	            <div class="form-group">
+	            
+	            <div class="col-md-2 pad-1">
+	            
+	            <label> Iterations: </label>
+	            
+	            </div> 
+	            
+	            <div class="col-md-10 pad-2">
+	            
+	            <input class="form-control" id="usr" value="1000" type="number" name="iteration" id="iteration" ng-model="vm.user.iteration" required >
+	            </div>
+	            
+	            </div>
+	            
+	            <div class="clear"></div>       
+	         </div>
+		</md-input-container>
+
+		<span class="pad-6"> 
+
+		 <md-progress-linear ng-if="vm.dataLoading" md-mode="indeterminate"></md-progress-circular>
+		 </span>
+		<!-- <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-primary btn-block pad-3" data-ripple>Register</button> -->
+		 
+		 <md-button class="md-raised md-primary" type="submit" ng-disabled="form.$invalid || vm.dataLoading"  >Register</md-button>
+
+		  <md-button ng-href="#!/login" class="btn btn-link" >Sign In</md-button>
+
+		<div>       
+            
+            
+            <!-- <a href="#!/login" class="btn btn-link"> Sign In </a> -->
+
+        </div>	
+		
+		
+		</div>		
+		
+		</div>	
+		
+		<div class="clear"></div>
+		</div>
+		
+		</form>
+		
+		
+		
+		</div>
+	
+	
+		<script>
+	
+    // just add effect to elements
+    Array.prototype.forEach.call(document.querySelectorAll('[data-ripple]'), function(element){
+        // find all elements and attach effect
+        new RippleEffect(element); // element is instance of javascript element node
+    });
+</script>
+	
+	
+	<div class="clear"></div>

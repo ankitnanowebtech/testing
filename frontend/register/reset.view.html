@@ -1,0 +1,166 @@
+﻿<div class="col-md-12">
+		
+		<div class="top-black-2">			
+			<h2><img src="assets/images/logo2.png"></h2>
+		</div>		
+		<div class="top-icons">		
+			<ul>		
+				<li><a href="#"><img src="assets/images/user-icon1.png" alt="0" border="0"></a></li>
+				<li><a href="#"><img src="assets/images/user-icon2.png" alt="0" border="0"></a></li>
+				<li><a href="#"><img src="assets/images/user-icon3.png" alt="0" border="0"></a></li>
+				<li><a href="#"><img src="assets/images/user-icon4.png" alt="0" border="0"></a></li>
+
+				<li>  <md-button ng-href="#/reset" class="btn btn-link" >Reset Password</md-button> </li>				
+				<li class="pull-right"><a href="#!/login" > Hi {{vm.username}} (Logout)</a> </li>			
+				
+			</ul>		
+		</div>		
+		<div class="enpast">		
+		<div class="col-md-2 pad-1 pad-2" >		
+			<div class="left-enpast" style="min-height:590px;">		
+			
+					<div class="left-menu">
+					
+					<ul>		
+						<!-- <li><a href="#"><img src="assets/images/folder-icon2.png" alt="folder" class="new-icon" border="0"> Container-001</a></li>
+						<li><a href="#"><img src="assets/images/folder-icon2.png" alt="folder" class="new-icon" border="0"> Container-002</a></li>
+						<li><a href="#"><img src="assets/images/folder-icon2.png" alt="folder" class="new-icon" border="0"> Container-003</a></li> -->	
+					</ul>
+					
+						<div class="clear"></div>
+					</div>	
+			
+			</div>		
+		</div>	
+		
+		<div class="col-md-10 ab-white-2">
+		
+			<div class="new-top_redue-icon">						
+			
+			</div>			
+			<div class="text-top">		
+
+
+
+
+	<form name="form" ng-submit="vm.resetpassword()" role="form">		
+		
+
+		<div class="right-enpast">
+		<span class="pad-6">
+		<div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message"></div>
+        </span>
+
+                <md-input-container class="md-block">
+			<div class="enter-cont-2">	
+				<div class="form-group"  ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">				
+					<div class="col-md-11 col-sm-11 col-xs-11 pad-1">
+						<input type="password" name="password" id="password" class="form-control" placeholder="Enter your Password" ng-model="vm.password" required>
+						<span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password is required</span>
+					</div>
+					
+				</div>
+				<div class="clear"></div>
+			</div>
+		 </md-input-container>
+		    <md-input-container class="md-block">
+					<div class="enter-cont-2">
+					<div class="form-group">
+
+					<div class="col-md-2 pad-1">
+
+					Iterations:
+
+					</div> 
+
+					<div class="col-md-10 pad-2">
+
+					<input class="form-control" id="iterations" type="number" ng-model="vm.iterations" required>
+					<span ng-show="form.iterations.$dirty && form.iterations.$error.required" class="help-block">Iterations is required</span>
+					</div>
+
+					</div>
+
+					<div class="clear"></div>		
+					</div>
+		 		</md-input-container>
+
+		         <md-input-container class="md-block">
+			<div class="enter-cont-2">	
+				<div class="form-group"  ng-class="{ 'has-error': form.newpassword.$dirty && form.newpassword.$error.required }">				
+					<div class="col-md-11 col-sm-11 col-xs-11 pad-1">
+						<input type="password" name="newpassword" id="newpassword" class="form-control" placeholder="Enter New Password" ng-model="vm.newpassword" required>
+						<span ng-show="form.newpassword.$dirty && form.newpassword.$error.required" class="help-block">New Password is required</span>
+					</div>
+					
+				</div>
+				<div class="clear"></div>
+			</div>
+		 </md-input-container>
+		
+	
+        <md-input-container class="md-block">
+			<div class="enter-cont-2">	
+				<div class="form-group"  ng-class="{ 'has-error': form.cnewpassword.$dirty && form.cnewpassword.$error.required }">				
+					<div class="col-md-11 col-sm-11 col-xs-11 pad-1">
+						<input type="password" name="cnewpassword" id="cnewpassword" class="form-control" placeholder="Enter New Confirm Password" ng-model="vm.cnewpassword" required>
+						<span ng-show="form.cnewpassword.$dirty && form.cnewpassword.$error.required" class="help-block">Confirm Password is required</span>
+					</div>
+					
+				</div>
+				<div class="clear"></div>
+			</div>
+		 </md-input-container>
+         
+         <md-input-container class="md-block">
+					<div class="enter-cont-2">
+					<div class="form-group">
+
+					<div class="col-md-2 pad-1">
+
+					Iterations:
+
+					</div> 
+
+					<div class="col-md-10 pad-2">
+
+					<input class="form-control" id="niterations" type="number" ng-model="vm.niterations" required>
+					<span ng-show="form.niterations.$dirty && form.niterations.$error.required" class="help-block">New Iterations is required</span>
+					</div>
+
+					</div>
+
+					<div class="clear"></div>		
+					</div>
+		 </md-input-container>
+
+		 <span style="text-align: center;">  
+		 
+			 <md-progress-linear ng-if="vm.dataLoading" md-mode="indeterminate"></md-progress-circular>
+
+		 </span>
+		
+        
+              <md-button class="md-raised md-primary" type="submit" ng-disabled="form.$invalid || vm.dataLoading" >Reset Password</md-button>
+
+            
+
+			<div class="clear"></div>
+		
+		</div>		
+	</form>		
+			</div>
+		
+		</div>		
+		
+		<div class="clear"></div>
+		</div>	
+		
+		</div>
+	
+	
+	
+	
+	
+	<div class="clear"></div>
+
